@@ -2,8 +2,6 @@
 
 A WIP proposal for [FontBakery](https://github.com/googlefonts/fontbakery).
 
-NOTE: the sizing in my javascript isn't acting predictably yet. 😑 I need to double-check to find out why. Until I know it's working as expected, I'm putting this proposal on hold.
-
 Sizing comparison tool coded at [https://codesandbox.io/s/q7449w2m9w](https://codesandbox.io/s/q7449w2m9w).
 
 ## Observed behavior
