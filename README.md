@@ -24,21 +24,21 @@ A FontBakery QA could alert designers if the relative size of a given font is an
 
 When different fonts are used for the same content, it is easy to see the size differences between them. Look, for example, at Noto Serif next to Tinos in the example below:
 
-![image](https://user-images.githubusercontent.com/7355414/47742017-173b6e80-dc52-11e8-9f1d-805d638c7f9a.png)
+![image](assets/1.png)
 
 You can also see a sort of "bar chart" of comparitive line lengths, by setting type at a small size. This isn't necessarily a huge problem, but you might expect "normal width" text fonts to have a bit more similarity.
 
-![image](https://user-images.githubusercontent.com/7355414/47742074-3c2fe180-dc52-11e8-9bf1-32d21e77a96c.png)
+![image](assets/2.png)
 
 A common solution for mixing fonts is to match the x-height. Material Design provides a ["Theme Editor" Sketch Plugin](https://material.io/tools/theme-editor/) which, among other things, helps designers to try different fonts in place of the standard Roboto. When a new font is selected, it is swapped in place of Roboto, with its font size rescaled to match x-heights.
 
-![image](https://user-images.githubusercontent.com/7355414/47741081-c4f94e00-dc4f-11e8-80c1-a11ffa297553.png)
+![image](assets/3.png)
 
 Using this tool, I've compared several popular fonts, to show the effect of matching fonts by x-height. The font sizes generated are one way to see the relative sizing compared to a "normal" font like Roboto. It works fairly well in the majority of cases, but sometimes, fonts still end up clearly visually bigger or smaller. In particular, a font with a relatively low x-Height (such as Adobe Caslon Pro or EB Garamond) will look massive next to common fallbacks like Times or Tinos.
 
-![image](https://user-images.githubusercontent.com/7355414/47741121-de9a9580-dc4f-11e8-8a0a-5c2295ca419b.png)
+![image](assets/4.png)
 
-![image](https://user-images.githubusercontent.com/7355414/47741126-e1958600-dc4f-11e8-9784-16e9156dcc55.png)
+![image](assets/5.png)
 
 In short, if the x-height of a font is relatively low, it will look large when its x-height is matched with other fonts. If the x-height of a font is relatively large, it will look small when its x-height is matched with other fonts. So, x-height isn't necessarily the most accurate metric to match different fonts by.
 
@@ -48,9 +48,9 @@ As shown when x-height is matched, it is not necessarily a perfect solution due 
 
 Potentially, something a little more flexible might be the average of x-height, cap height, and ascender height (and maybe also decender height). This value could be considered a font's "visual size" (I'm making this term up right now). I'm not 100% sure of this metric as a perfect one, because x-height letters do tend to make up the bulk of words in most text. Still, a quick test shows (in my opinion) that it brings the apparent sizing of two fonts closer than simply matching the x-Height:
 
-![image](https://user-images.githubusercontent.com/7355414/47756272-cb032500-dc77-11e8-9545-de1c988a002d.png)
+![image](assets/6.png)
 
-![image](https://user-images.githubusercontent.com/7355414/47756244-b9218200-dc77-11e8-8d3a-13e01b4f93e8.png)
+![image](assets/7.png)
 
 
 If we _really_ wanted to be clever about visual sizing, we could make a study of relative usage of letters in Latin script languages on popular websites, then base the visual size calculation off of the metrics, with frequency in the calculation. If anyone wants to experiment with the fonts or the calculations, here's a Code Sandbox:
