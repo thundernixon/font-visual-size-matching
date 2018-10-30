@@ -9,9 +9,9 @@ const gFontFamilies = ["Noto Serif", "EB Garamond"];
 document.body.style.setProperty("--fontA", gFontFamilies[0]);
 document.body.style.setProperty("--fontB", gFontFamilies[1]);
 
-// if you instead want to check against a system font, you can uncomment and use the code below
-// document.body.style.setProperty("--fontA", "Times");
-// document.body.style.setProperty("--fontB", "Arial");
+// if you instead want to check against a system or local font, you can uncomment and use the code below
+document.body.style.setProperty("--fontA", "Times");
+document.body.style.setProperty("--fontB", "OperatorMono-Book");
 
 // ================ VARIABLES TO PLAY WITH ==================
 // ==========================================================
@@ -81,13 +81,13 @@ function newFontSize(elementA, elementB, caption, matchType = "x") {
 
   let fontBsize = parseFloat(fontBfontSize);
 
-  if (matchType === "x") {
+  if (matchType == "x") {
     var fontBmatchXsize = fontBsize * xHeightFactor(elementA, elementB);
     var newLineHeight = 1 / xHeightFactor(elementA, elementB);
-  } else if (matchType === "visual") {
+  } else if (matchType == "visual") {
     var fontBmatchXsize = fontBsize * vizMatchFactor(elementA, elementB);
     var newLineHeight = 1 / vizMatchFactor(elementA, elementB);
-  } else if (matchType === "altVisual") {
+  } else if (matchType == "altVisual") {
     var fontBmatchXsize = fontBsize * altVizMatchFactor(elementA, elementB);
     var newLineHeight = 1 / altVizMatchFactor(elementA, elementB);
   }
@@ -98,12 +98,6 @@ function newFontSize(elementA, elementB, caption, matchType = "x") {
     getMetrics(elementB).fontFamily,
     fontBmatchXsize
   );
-  // getMetrics(elementB)
-  //   .fontFamily.replace('"', "")
-  //   .replace('"', "") +
-  // ", " +
-  // parseFloat(fontBnewStyle).toFixed(2) +
-  // "px";
 
   return fontBnewStyle;
 }
