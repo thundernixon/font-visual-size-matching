@@ -1,0 +1,52 @@
+:root {
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontA: "Times", serif;
+  --fontB: "Arial", serif;
+
+  --purple: #4c00ff;
+}
+body {
+  padding: calc(2.5vw + 16px);
+  background-color: #eee;
+  font-family: var(--font);
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto calc(2.5rem + 2.5vw);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 0;
+  color: var(--purple);
+  padding-bottom: 0.25em;
+  border-bottom: 2px solid #acacac;
+}
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.comparison fig p {
+  font-size: 100px;
+  line-height: 1;
+  padding: 0;
+  margin: 8px 0 12px;
+}
+.comparison figcaption {
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 16px;
+  color: #444;
+  opacity: 0.75;
+}
+
+.fontA {
+  font-family: var(--fontA);
+}
+.fontB {
+  font-family: var(--fontB);
+}

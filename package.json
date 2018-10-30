@@ -1,0 +1,18 @@
+{
+  "name": "parcel-sandbox",
+  "version": "1.0.0",
+  "description": "Simple Parcel Sandbox",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "fontmetrics": "1.0.0",
+    "webfontloader": "1.6.28"
+  },
+  "devDependencies": {
+    "@types/webfontloader": "1.6.29",
+    "parcel-bundler": "^1.6.1"
+  }
+}
