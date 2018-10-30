@@ -42,15 +42,20 @@ Using this tool, I've compared several popular fonts, to show the effect of matc
 
 ![image](https://user-images.githubusercontent.com/7355414/47741126-e1958600-dc4f-11e8-9784-16e9156dcc55.png)
 
+In short, if the x-height of a font is relatively low, it will look large when its x-height is matched with other fonts. If the x-height of a font is relatively large, it will look small when its x-height is matched with other fonts. So, x-height isn't necessarily the most accurate metric to match different fonts by.
+
 ## A potential standard
 
 As shown when x-height is matched, it is not necessarily a perfect solution due to other shifting dimensions like cap height, ascender height, and descender height, which also effect perceived size.
 
-Potentially, something a little more flexible might be the average of x-height, cap height, and ascender height. This value could be considered a font's "visual size" (I'm making this term up right now). I'm not 100% sure of this metric as a perfect one, because x-height letters do tend to make up the bulk of words in most text. Still, a quick test shows (in my opinion) that it brings the apparent sizing of two fonts closer than simply matching the x-Height:
+Potentially, something a little more flexible might be the average of x-height, cap height, and ascender height (and maybe also decender height). This value could be considered a font's "visual size" (I'm making this term up right now). I'm not 100% sure of this metric as a perfect one, because x-height letters do tend to make up the bulk of words in most text. Still, a quick test shows (in my opinion) that it brings the apparent sizing of two fonts closer than simply matching the x-Height:
 
-![image](https://user-images.githubusercontent.com/7355414/47751363-e9612480-dc67-11e8-8fc0-e2b07a7e6161.png)
+![image](https://user-images.githubusercontent.com/7355414/47756272-cb032500-dc77-11e8-9545-de1c988a002d.png)
 
-If we _really_ wanted to be clever about visual sizing, we could make a study of relative usage of letters in Latin script languages on popular websites, then base the visual size calculation off of that. Here's some HTML + JS I used to make the above image, in case anyone wants to mess with the fonts or the calculations:
+![image](https://user-images.githubusercontent.com/7355414/47756244-b9218200-dc77-11e8-8d3a-13e01b4f93e8.png)
+
+
+If we _really_ wanted to be clever about visual sizing, we could make a study of relative usage of letters in Latin script languages on popular websites, then base the visual size calculation off of the metrics, with frequency in the calculation. If anyone wants to experiment with the fonts or the calculations, here's a Code Sandbox:
 
 https://codesandbox.io/s/0qv6pl7qkw
 
@@ -58,6 +63,8 @@ You can check different Google Fonts by editing the list in
 ```
 const gFontFamilies = ["Noto Serif", "EB Garamond"];
 ```
+
+...or edit the variables just below that to pull in system / local fonts.
 
 ## Suggested QA message for Font Bakery
 
